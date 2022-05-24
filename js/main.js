@@ -160,7 +160,7 @@ function Third_Data() {
 };
 
 function Notify() {
-  if((DC_Vol_Solar < 1 && DC_Cur_Solar < 1 && DC_Pow_Solar < 1 && AC_Vol_Solar == 0 && AC_Cur_Solar == 0 && AC_Pow_Solar == 0 && Energy_Solar == 0 && Fre_Solar == 0 && PF_Solar == 0)
+  if((DC_Vol_Solar < 1 && DC_Cur_Solar < 1 && DC_Pow_Solar)
   && Weather_Solar == 1) {
     document.getElementById("Notify_Solar").innerHTML = "The solar power station suffered a problem";
   }
@@ -172,7 +172,7 @@ function Notify() {
     document.getElementById("Notify_Solar").innerHTML = "No problem";
   };
 
-  if((DC_Vol_Wind < 1 && DC_Cur_Wind < 1 && DC_Pow_Wind < 1 && AC_Vol_Wind == 0 && AC_Cur_Wind == 0 && AC_Pow_Wind == 0 && Energy_Wind == 0 && Fre_Wind == 0 && PF_Wind == 0)
+  if((DC_Vol_Wind < 1 && DC_Cur_Wind < 1 && DC_Pow_Wind < 1)
   && Weather_Wind == 1) {
     document.getElementById("Notify_Wind").innerHTML = "The wind power station suffered a problem";
   }
