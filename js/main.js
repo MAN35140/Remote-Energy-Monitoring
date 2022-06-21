@@ -30,7 +30,7 @@ function Solar_Data() {
 
         document.getElementById("LU_Solar").innerHTML = lastUpdateSolar = data.created_at;
         // lastUpdate = data.created_at;
-        // console.log(typeof data.created_at);
+        // console.log(typeof data);
       }
     //   else {
     //     document.getElementById("DC_Vol_Solar").innerHTML = "error";
@@ -53,7 +53,7 @@ function Solar_Data() {
     var minuteSolar = lastUpdateSolar.substr(14, 2);
     var secondSolar = lastUpdateSolar.substr(17, 2);
     const timeLUSolar = new Date(yearSolar, monthSolar - 1, daySolar, hourSolar, minuteSolar, secondSolar);
-    // console.log(timeLUSolar);
+    // console.log(yearrrr);
 
     const d = new Date();
     // console.log(d);
@@ -160,13 +160,13 @@ function Third_Data() {
 };
 
 function Notify() {
-  if((DC_Vol_Solar < 1 && DC_Cur_Solar < 1 && DC_Pow_Solar)
+  if((DC_Vol_Solar < 1 && DC_Cur_Solar < 1 && DC_Pow_Solar < 1)
   && Weather_Solar == 1) {
-    document.getElementById("Notify_Solar").innerHTML = "The solar power station suffered a problem";
+    document.getElementById("Notify_Solar").innerHTML = "The solar power system has a problem";
   }
-  else if((DC_Vol_Solar >= 1 || DC_Cur_Solar >= 1 || DC_Pow_Solar >= 1 || AC_Vol_Solar != 0 || AC_Cur_Solar != 0 || AC_Pow_Solar != 0 || Energy_Solar != 0 || Fre_Solar != 0 || PF_Solar != 0)
+  else if((DC_Vol_Solar >= 1 || DC_Cur_Solar >= 1 || DC_Pow_Solar >= 1)
   && Weather_Solar == 0) {
-    document.getElementById("Notify_Solar").innerHTML = "The data collection system is in trouble";
+    document.getElementById("Notify_Solar").innerHTML = "The solar power system has a problem";
   }
   else {
     document.getElementById("Notify_Solar").innerHTML = "No problem";
@@ -174,11 +174,11 @@ function Notify() {
 
   if((DC_Vol_Wind < 1 && DC_Cur_Wind < 1 && DC_Pow_Wind < 1)
   && Weather_Wind == 1) {
-    document.getElementById("Notify_Wind").innerHTML = "The wind power station suffered a problem";
+    document.getElementById("Notify_Wind").innerHTML = "The wind power system has a problem";
   }
-  else if((DC_Vol_Wind >= 1 || DC_Cur_Wind >= 1 || DC_Pow_Wind >= 1 || AC_Vol_Wind != 0 || AC_Cur_Wind != 0 || AC_Pow_Wind != 0 || Energy_Wind != 0 || Fre_Wind != 0 || PF_Wind != 0)
+  else if((DC_Vol_Wind >= 1 || DC_Cur_Wind >= 1 || DC_Pow_Wind >= 1)
   && Weather_Wind == 0) {
-    document.getElementById("Notify_Wind").innerHTML = "The data collection system is in trouble";
+    document.getElementById("Notify_Wind").innerHTML = "The wind power system has a problem";
   }
   else {
     document.getElementById("Notify_Wind").innerHTML = "No problem";
